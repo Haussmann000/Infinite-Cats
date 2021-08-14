@@ -24,7 +24,7 @@ li {
 }
 
 img {
-  max-width: 50%;
+  max-width: 70%;
   margin: 5px;
   border-radius: 5px;
 }
@@ -48,7 +48,5 @@ img {
 }
 
 @media screen and (min-width: 414px) {
-  img {
-    max-width: 70%;
-  }
+  
 }

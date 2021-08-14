@@ -31,15 +31,15 @@ export default function InfiniteScrollIndex() {
     <ul>
       {list.map((value) => 
       <li>
-        <img src={value} className="photos"></img>
-        <img src="icon_cat.png" className="icon"></img>
+        <img src={value} className="photos" alt="猫画像"></img>
+        <img src="icon_cat.png" className="icon" alt="小さい猫アイコン"></img>
       </li>)}
     </ul>);
   
 
   const loader =
   <div className="loader" key={0}>
-    <img src="https://nekocatgato.up.seesaa.net/image/Corriendo_gato_L.gif" id="loadingImage"></img>
+    <img src="https://nekocatgato.up.seesaa.net/image/Corriendo_gato_L.gif" alt="走る猫" id="loadingImage"></img>
     <p>Loading ...</p>
   </div>;
   // http://nekocatgato.seesaa.net/article/135946029.htmlさんの配布画像
