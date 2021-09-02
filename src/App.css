@@ -3,24 +3,37 @@
   font-family: 'Noto Sans JP', Helvetica, sans-serif;
 }
 
+
 .container{
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .container div{
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
 li {
   list-style: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   text-align: center;
   justify-content: center;
   align-items: center;
+  margin: 150px auto;
+}
+
+li img {
+  max-width: 50%;
+}
+
+li:nth-child(odd) {
+  flex-direction: row-reverse;
 }
 
 img {
@@ -39,12 +52,17 @@ img {
   flex-direction: column;
 }
 
+.loader img {
+  width: 40%;
+}
+
 .loader p {
   text-align: center;
 }
 #loadingImage {
   margin: auto;
   position: relative;
+  width: 40%;
 }
 
 @media screen and (min-width: 414px) {

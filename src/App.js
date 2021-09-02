@@ -1,14 +1,23 @@
 import {useState} from 'react';
 import InfiniteScroll  from "react-infinite-scroller";
 import { createClient } from 'pexels';
+import Loader from'./component/Loader'
+import Select from './component/Select'
+import Form from './component/Form'
+import Header from './component/Header'
 import './App.css';
 const API_BACK_KEY =  process.env.REACT_APP_BACK_API_KEY;
 const client = createClient(`${API_BACK_KEY}`);
 const query = 'cats';
+// プルダウンコンポーネントからvalueを入れる
+// valueによってタイトルを出し分ける
 
 export default function InfiniteScrollIndex() {
   const [list, setList] = useState([]);  
   const [hasMore, setHasMore] = useState(true);
+    // const [ref, inView] = useInView({
+    //     rootMargin: '-50px 0px',
+    // });
   const fetchImage = (imageNumber = 5) => {
     client.photos.search({query, page: imageNumber})
     .then((res) => {
@@ -37,21 +46,21 @@ export default function InfiniteScrollIndex() {
     </ul>);
   
 
-  const loader =
-  <div className="loader" key={0}>
-    <img src="https://nekocatgato.up.seesaa.net/image/Corriendo_gato_L.gif" alt="走る猫" id="loadingImage"></img>
-    <p>Loading ...</p>
-  </div>;
-  // http://nekocatgato.seesaa.net/article/135946029.htmlさんの配布画像
-
   return (
-    <div className="container">
-      <InfiniteScroll
+    <div className="wrapper">      
+      {/* <Header /> */}
+        {/* <Select /> */}
+        {/* <Form /> */}
+      <div className="container">
+        <InfiniteScroll
+        // valueの内容で出し分け
         loadMore={loadMore}
         hasMore={hasMore}
-        loader={loader}>
-          {items}
-      </InfiniteScroll>
+        loader={<Loader />}
+        >
+            {items}
+        </InfiniteScroll>
+        </div>
     </div>
   )
 }
