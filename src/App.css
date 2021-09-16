@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 .body {
   font-family: 'Noto Sans JP', Helvetica, sans-serif;
 }
+
 
 
 .container{
@@ -47,9 +49,26 @@ img {
   content: url("icon_cat.png")
 }
 
+.header {
+  background-color: gold;
+  border: solid 5px darkgoldenrod;
+  color: #555;
+  margin: 0px;
+  height: 7rem;
+  padding: 5px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-feature-settings: "swsh";
+  font-family: 'Great Vibes', cursive;
+}
+
 .loader {
   display: flex;
   flex-direction: column;
+  font-feature-settings: "swsh";
+  font-family: 'Great Vibes', cursive;
 }
 
 .loader img {

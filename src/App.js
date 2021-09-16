@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import InfiniteScroll  from "react-infinite-scroller";
+import { useInView } from 'react-intersection-observer';
+import 'animate.css';
 import { createClient } from 'pexels';
 import Loader from'./component/Loader'
 import Select from './component/Select'
@@ -15,9 +17,9 @@ const query = 'cats';
 export default function InfiniteScrollIndex() {
   const [list, setList] = useState([]);  
   const [hasMore, setHasMore] = useState(true);
-    // const [ref, inView] = useInView({
-    //     rootMargin: '-50px 0px',
-    // });
+    const {ref, inView} = useInView({
+        rootMargin: '-50px 0px',
+    });
   const fetchImage = (imageNumber = 5) => {
     client.photos.search({query, page: imageNumber})
     .then((res) => {
@@ -40,7 +42,7 @@ export default function InfiniteScrollIndex() {
     <ul>
       {list.map((value) => 
       <li>
-        <img src={value} className="photos" alt="猫画像"></img>
+        <img src={value} className="photos animate__animated animate__fadeInUp" alt="猫画像"></img>
         <img src="icon_cat.png" className="icon" alt="小さい猫アイコン"></img>
       </li>)}
     </ul>);
@@ -48,7 +50,7 @@ export default function InfiniteScrollIndex() {
 
   return (
     <div className="wrapper">      
-      {/* <Header /> */}
+      <Header />
         {/* <Select /> */}
         {/* <Form /> */}
       <div className="container">
